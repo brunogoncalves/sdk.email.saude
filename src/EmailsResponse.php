@@ -21,7 +21,7 @@ class EmailsResponse
      * @param $email
      * @return mixed
      */
-    public function isOK($email)
+    public function isOk($email)
     {
         return Arr::get($this->status, $email, false);
     }
@@ -32,5 +32,39 @@ class EmailsResponse
     public function all()
     {
         return $this->status;
+    }
+
+    /**
+     * Retorna todos os e-mails ok.
+     *
+     * @return string
+     */
+    public function allOk()
+    {
+        $emails = [];
+        foreach ($this->status as $email => $status) {
+            if ($status) {
+                $emails[$email] = true;
+            }
+        }
+
+        return implode(',', array_keys($emails));
+    }
+
+    /**
+     * Retorna todos os e-mails com erro.
+     *
+     * @return string
+     */
+    public function allError()
+    {
+        $emails = [];
+        foreach ($this->status as $email => $status) {
+            if (! $status) {
+                $emails[$email] = false;
+            }
+        }
+
+        return implode(',', array_keys($emails));
     }
 }
