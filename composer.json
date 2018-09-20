@@ -1,0 +1,34 @@
+{
+    "name"       : "brunogoncalves/sdk.email.saude",
+    "description": "SDK NetForce Email Saude.",
+    "keywords"   : ["netforce", "email", "saude", "sdk-php"],
+    "license"    : "GPL-3",
+    "type"       : "project",
+
+    "authors": [
+        {
+            "name" : "Bruno Goncalves",
+            "email": "bugotech@gmali.com"
+        }
+    ],
+
+    "require": {
+        "php"               : ">=5.5.0",
+        "nano7/SDK-PHP"     : "dev-master"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "NetForce\\Sdk\\EmailsSaude\\": "src/"
+        }
+    },
+
+    "config": {
+        "preferred-install"  : "dist",
+        "sort-packages"      : true,
+        "optimize-autoloader": true
+    },
+
+    "minimum-stability": "dev",
+    "prefer-stable"    : true
+}
