@@ -37,9 +37,10 @@ class EmailsResponse
     /**
      * Retorna todos os e-mails ok.
      *
-     * @return string
+     * @param bool $str
+     * @return string|array
      */
-    public function allOk()
+    public function allOk($str = true)
     {
         $emails = [];
         foreach ($this->status as $email => $status) {
@@ -48,15 +49,21 @@ class EmailsResponse
             }
         }
 
-        return implode(',', array_keys($emails));
+        $emails = array_keys($emails);
+        if (! $str) {
+            return $emails;
+        }
+
+        return implode(',', $emails);
     }
 
     /**
      * Retorna todos os e-mails com erro.
      *
-     * @return string
+     * @param bool $str
+     * @return array|string
      */
-    public function allError()
+    public function allError($str = false)
     {
         $emails = [];
         foreach ($this->status as $email => $status) {
@@ -65,6 +72,12 @@ class EmailsResponse
             }
         }
 
-        return implode(',', array_keys($emails));
+
+        $emails = array_keys($emails);
+        if (! $str) {
+            return $emails;
+        }
+
+        return implode(',', $emails);
     }
 }
