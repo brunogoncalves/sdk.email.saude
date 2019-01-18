@@ -8,8 +8,8 @@ class EmailSaudeClient extends SdkClient
      * @var array
      */
     protected $endpoints = [
-        'production' => 'http://emails.ms.netforce.app', // http://api.com/{version}
-        'sandbox' => 'http://emails.ms.sandbox.netforce.app', // http://api.sandbox.api.com/{version}
+        'production' => 'https://tools-dot-netforce-api.appspot.com/saude-emails', // http://api.com/{version}
+        'sandbox' => 'https://sandbox-tools-dot-netforce-api.appspot.com/saude-emails', // http://api.sandbox.api.com/{version}
     ];
 
     /**
